@@ -54,8 +54,9 @@ class Animal:
 
 
     def __str__(self):
-        return (f"Mi nombre es {self.nombre}, tengo una edad de {self.edad}, "
-                f"habito en {self.habitat} y mi genero es {self.genero}")
+        return (f"Mi nombre es {self.getNombre()}, tengo una edad de {self.getEdad()}, "
+                f"habito en {self.getHabitat()} y mi genero es {self.getGenero()}")
 
     def toString(self):
         return self.__str__()
+
