@@ -1,4 +1,6 @@
-from zooAnimales.animal import Animal
+import sys
+sys.path.append("C:/Users/Hogar/Documents/GitHub/taller-5-python-JloaizaL")
+from .animal import Animal
 
 class Ave(Animal):
     halcones = 0
@@ -6,8 +8,15 @@ class Ave(Animal):
 
     def __init__(self, nombre=None, edad=None, habitat=None, genero=None, colorPlumas=None):
         super().__init__(nombre, edad, habitat, genero)
-        self.colorPlumas = colorPlumas
+        self._colorPlumas = colorPlumas
         Animal.aves += 1
+
+    # Getters y Setters
+    def getColorPlumas(self):
+        return self._colorPlumas
+
+    def setColorPlumas(self, colorPlumas):
+        self._colorPlumas = colorPlumas
 
     @staticmethod
     def crearHalcon(nombre, edad, genero):

@@ -1,34 +1,35 @@
 import sys
 sys.path.append("C:/Users/Hogar/Documents/GitHub/taller-5-python-JloaizaL")
-
 from gestion.zona import Zona
 
 class Zoologico:
     def __init__(self, nombre=None, ubicacion=None):
-        self.nombre = nombre
-        self.ubicacion = ubicacion
-        self.zonas = []
+        self._nombre = nombre
+        self._ubicacion = ubicacion
+        self._zonas = []
 
+    # Métodos
     def agregarZonas(self, zona: Zona):
-        self.zonas.append(zona)
+        self._zonas.append(zona)
 
     def cantidadTotalAnimales(self) -> int:
-        return sum(zona.cantidad_animales() for zona in self.zonas)
+        return sum(zona.cantidadAnimales() for zona in self._zonas)
 
+    # Getters y Setters
     def getNombre(self):
-        return self.nombre
+        return self._nombre
 
     def setNombre(self, nombre):
-        self.nombre = nombre
+        self._nombre = nombre
 
     def getUbicacion(self):
-        return self.ubicacion
+        return self._ubicacion
 
     def setUbicacion(self, ubicacion):
-        self.ubicacion = ubicacion
+        self._ubicacion = ubicacion
 
     def getZonas(self):
-        return self.zonas
+        return self._zonas
 
     def setZonas(self, zonas):
-        self.zonas = zonas
+        self._zonas = zonas

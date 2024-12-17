@@ -1,4 +1,6 @@
-from zooAnimales.animal import Animal
+import sys
+sys.path.append("C:/Users/Hogar/Documents/GitHub/taller-5-python-JloaizaL")
+from .animal import Animal
 
 class Reptil(Animal):
     iguanas = 0
@@ -6,9 +8,22 @@ class Reptil(Animal):
 
     def __init__(self, nombre=None, edad=None, habitat=None, genero=None, colorEscamas=None, largoCola=None):
         super().__init__(nombre, edad, habitat, genero)
-        self.colorEscamas = colorEscamas
-        self.largoCola = largoCola
+        self._colorEscamas = colorEscamas
+        self._largoCola = largoCola
         Animal.reptiles += 1
+
+    # Getters y Setters
+    def getColorEscamas(self):
+        return self._colorEscamas
+
+    def setColorEscamas(self, colorEscamas):
+        self._colorEscamas = colorEscamas
+
+    def getLargoCola(self):
+        return self._largoCola
+
+    def setLargoCola(self, largoCola):
+        self._largoCola = largoCola
 
     @staticmethod
     def crearIguana(nombre, edad, genero):

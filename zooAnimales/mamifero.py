@@ -1,4 +1,6 @@
-from zooAnimales.animal import Animal
+import sys
+sys.path.append("C:/Users/Hogar/Documents/GitHub/taller-5-python-JloaizaL")
+from .animal import Animal
 
 class Mamifero(Animal):
     caballos = 0
@@ -6,9 +8,22 @@ class Mamifero(Animal):
 
     def __init__(self, nombre=None, edad=None, habitat=None, genero=None, pelaje=None, patas=None):
         super().__init__(nombre, edad, habitat, genero)
-        self.pelaje = pelaje
-        self.patas = patas
+        self._pelaje = pelaje
+        self._patas = patas
         Animal.mamiferos += 1
+
+    # Getters y Setters
+    def getPelaje(self):
+        return self._pelaje
+
+    def setPelaje(self, pelaje):
+        self._pelaje = pelaje
+
+    def getPatas(self):
+        return self._patas
+
+    def setPatas(self, patas):
+        self._patas = patas
 
     @staticmethod
     def crearCaballo(nombre, edad, genero):
