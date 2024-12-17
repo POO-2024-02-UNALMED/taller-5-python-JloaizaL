@@ -13,7 +13,7 @@ class Mamifero(Animal):
         Animal.mamiferos += 1
 
     # Getters y Setters
-    def getPelaje(self):
+    def isPelaje(self):
         return self._pelaje
 
     def setPelaje(self, pelaje):
