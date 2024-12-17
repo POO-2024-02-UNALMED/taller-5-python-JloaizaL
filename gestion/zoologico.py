@@ -1,3 +1,6 @@
+import sys
+sys.path.append("C:/Users/Hogar/Documents/GitHub/taller-5-python-JloaizaL")
+
 from gestion.zona import Zona
 
 class Zoologico:
